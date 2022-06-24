@@ -1,5 +1,5 @@
 const supabaseClient=require('@supabase/supabase-js')
-const supabaseUrl = "https://anhjgolybidaizfwffyu.supabase.co"
-const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFuaGpnb2x5YmlkYWl6ZndmZnl1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NTQ1MjUzODAsImV4cCI6MTk3MDEwMTM4MH0.QrZg9V9G0xy0GU7xkPrN7FBc45Q6-HBNwrVM4i6fcOQ"
+const supabaseUrl = process.env.PUBLIC_SUPABASE_URL
+const supabaseAnonKey = process.env.PUBLIC_SUPABASE_ANON
 
 module.exports = supabaseClient.createClient(supabaseUrl, supabaseAnonKey)
