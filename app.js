@@ -9,7 +9,7 @@ const unfollow = require('./routes/unfollow')
 const like = require('./routes/like')
 const unlike = require('./routes/unlike')
 const comment = require('./routes/comment')
-const fetch = require('./routes/fetch')
+const fetch = require('./routes/user-fetch')
 const register = require('./routes/register')
 const createEvent = require('./routes/create-event')
 const explore = require('./routes/recommendation')
@@ -17,6 +17,7 @@ const calender=require('./routes/calender')
 const myCalender=require('./routes/my-calender')
 const app = express()
 const port = 5000
+
 dotenv.config()
 
 app.use(bodyParser.json());
