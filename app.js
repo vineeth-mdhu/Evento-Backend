@@ -1,5 +1,6 @@
 const express = require('express')
 const dotenv = require('dotenv')
+const cors = require('cors')
 const bodyParser = require('body-parser')
 const createPost = require('./routes/create-post')
 const createUser = require('./routes/create-user')
@@ -13,9 +14,9 @@ const fetch = require('./routes/user-fetch')
 const register = require('./routes/register')
 const createEvent = require('./routes/create-event')
 const explore = require('./routes/recommendation')
-const calender=require('./routes/calender')
-const myCalender=require('./routes/my-calender')
-const fillBuffer=require('./routes/fill-buffer')
+const calender = require('./routes/calender')
+const myCalender = require('./routes/my-calender')
+const fillBuffer = require('./routes/fill-buffer')
 
 
 const app = express()
@@ -24,6 +25,8 @@ const port = 5000
 dotenv.config()
 
 app.use(bodyParser.json());
+
+app.use(cors())
 
 app.use('/create-post', createPost)
 
@@ -41,19 +44,19 @@ app.use('/unlike', unlike)
 
 app.use('/comment', comment)
 
-app.use('/fetch',fetch)
+app.use('/fetch', fetch)
 
-app.use('/register',register)
+app.use('/register', register)
 
-app.use('/create-event',createEvent)
+app.use('/create-event', createEvent)
 
-app.use('/explore',explore)
+app.use('/explore', explore)
 
-app.use('/calender',calender)
+app.use('/calender', calender)
 
-app.use('/my-calender',myCalender)
+app.use('/my-calender', myCalender)
 
-app.use('/fill-buffer',fillBuffer)
+app.use('/fill-buffer', fillBuffer)
 
 
 app.get('/', (req, res) => {
