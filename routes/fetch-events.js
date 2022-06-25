@@ -11,12 +11,11 @@ router.get('/', async (req, res) => {
             .eq('parent_org', id)
             .order('created_at', { ascending: false })
 
-
         if (success) {
             console.log(success)
         }
 
-        res.json(success.data)
+        res.json(update.data)
         res.end()
     }
     catch {

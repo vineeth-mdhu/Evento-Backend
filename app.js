@@ -15,6 +15,9 @@ const createEvent = require('./routes/create-event')
 const explore = require('./routes/recommendation')
 const calender=require('./routes/calender')
 const myCalender=require('./routes/my-calender')
+const fillBuffer=require('./routes/fill-buffer')
+
+
 const app = express()
 const port = 5000
 
@@ -49,6 +52,9 @@ app.use('/explore',explore)
 app.use('/calender',calender)
 
 app.use('/my-calender',myCalender)
+
+app.use('/fill-buffer',fillBuffer)
+
 
 app.get('/', (req, res) => {
     res.send('Hello World!')
